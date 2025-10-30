@@ -8,10 +8,8 @@ import {
   Alert,
   Platform,
 } from 'react-native';
-import AppleHealthKit, {
-  HealthValue,
-  HealthKitPermissions,
-} from 'react-native-health';
+
+const AppleHealthKit = require('react-native-health');
 
 const App = (): React.JSX.Element => {
   const [permissionStatus, setPermissionStatus] = useState<string>('');
@@ -28,7 +26,7 @@ const App = (): React.JSX.Element => {
     setPermissionStatus('Initializing...');
 
     // 요청할 권한 설정
-    const permissions: HealthKitPermissions = {
+    const permissions = {
       permissions: {
         read: [
           AppleHealthKit.Constants.Permissions.SleepAnalysis,
@@ -68,7 +66,7 @@ const App = (): React.JSX.Element => {
 
     AppleHealthKit.getSleepSamples(
       options,
-      (error: Object, results: HealthValue[]) => {
+      (error: Object, results: any[]) => {
         if (error) {
           console.error('수면 데이터 가져오기 오류:', error);
           Alert.alert('오류', '수면 데이터를 가져오는 데 실패했습니다.');
