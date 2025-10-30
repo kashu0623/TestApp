@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
   View,
   Text,
@@ -8,8 +7,8 @@ import {
   Alert,
   Platform,
 } from 'react-native';
-
-const AppleHealthKit = require('react-native-health').default;
+import { SafeAreaView } from 'react-native-safe-area-context';
+import AppleHealthKit from 'react-native-health';
 
 const App = (): React.JSX.Element => {
   const [permissionStatus, setPermissionStatus] = useState<string>('');
@@ -29,8 +28,8 @@ const App = (): React.JSX.Element => {
     const permissions = {
       permissions: {
         read: [
-          'SleepAnalysis',
-          'HeartRate',
+          AppleHealthKit.Constants.Permissions.SleepAnalysis,
+          AppleHealthKit.Constants.Permissions.HeartRate,
         ],
         write: [],
       },
@@ -189,4 +188,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
