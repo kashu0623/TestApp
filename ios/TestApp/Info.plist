@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>분석된 수면 데이터를 건강 앱에 기록하기 위해 권한이 필요합니다.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>수면 데이터를 읽어와 수면 단계를 분석하기 위해 권한이 필요합니다.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
