@@ -29,8 +29,8 @@ const App = (): React.JSX.Element => {
     const permissions = {
       permissions: {
         read: [
-          AppleHealthKit.Constants.Permissions.SleepAnalysis,
-          AppleHealthKit.Constants.Permissions.HeartRate,
+          'SleepAnalysis',
+          'HeartRate',
         ],
         write: [],
       },
