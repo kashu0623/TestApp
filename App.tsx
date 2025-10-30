@@ -9,7 +9,7 @@ import {
   Platform,
 } from 'react-native';
 
-const AppleHealthKit = require('react-native-health');
+const AppleHealthKit = require('react-native-health').default;
 
 const App = (): React.JSX.Element => {
   const [permissionStatus, setPermissionStatus] = useState<string>('');
